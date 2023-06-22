@@ -32,21 +32,7 @@ public class MainActivity extends AppCompatActivity {
         editbutton = findViewById(R.id.button2);
         f_button = findViewById(R.id.fbutton);
 
-        Profile f0 = new Profile(1, "Usman", "A1");
-        Profile f1 = new Profile(2,"Zubair",  "A2");
-        Profile f2 = new Profile("Musa", 1980, "Quetta");
-        Profile f3 = new Profile("Nadeem",1987,"Peshawar");
-        Profile f4 = new Profile("Shahid", 1980, "Karachi");
-        Profile f5 = new Profile("Zia",1987,"Faisalabad ");
-        Profile f6 = new Profile("Badar", 1980, "Rawalpindi");
-        Profile f7 = new Profile("Hashim",1997,"Karachi");
-        Profile f8 = new Profile("Salman",1980,"Quetta");
-        Profile f9 = new Profile("Rizwan",1982,"Kasur");
-        Profile f10 = new Profile("Junaid",1977,"Islamabad");
-        Profile f11 = new Profile("Waseem",1967,"Rawalpindi");
         db = new DBHelper(getApplicationContext());
-        db.insertStudent(f0);
-        db.insertStudent(f1);
 
         friendsList = db.selectAllStudents();
         recyclerView = findViewById(R.id.recylerViewStudent);
@@ -82,6 +68,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        f_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddProfile.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
