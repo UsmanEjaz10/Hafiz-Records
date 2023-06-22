@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -18,16 +20,20 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
-    Button button;
+    Button button, editbutton;
+    FloatingActionButton f_button;
+    DBHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         button = findViewById(R.id.button);
+        editbutton = findViewById(R.id.button2);
+        f_button = findViewById(R.id.fbutton);
 
-        Profile f0 = new Profile("Asad", 1980, "Giglgit");
-        Profile f1 = new Profile("Zubair", 1981, "Lahore");
+        Profile f0 = new Profile(1, "Usman", "A1");
+        Profile f1 = new Profile(2,"Zubair",  "A2");
         Profile f2 = new Profile("Musa", 1980, "Quetta");
         Profile f3 = new Profile("Nadeem",1987,"Peshawar");
         Profile f4 = new Profile("Shahid", 1980, "Karachi");
@@ -38,8 +44,11 @@ public class MainActivity extends AppCompatActivity {
         Profile f9 = new Profile("Rizwan",1982,"Kasur");
         Profile f10 = new Profile("Junaid",1977,"Islamabad");
         Profile f11 = new Profile("Waseem",1967,"Rawalpindi");
+        db = new DBHelper(getApplicationContext());
+        db.insertStudent(f0);
+        db.insertStudent(f1);
 
-        friendsList.addAll(Arrays.asList(new Profile[]{f0,f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11}));
+        friendsList = db.selectAllStudents();
         recyclerView = findViewById(R.id.recylerViewStudent);
 
 
@@ -63,6 +72,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        editbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, EditActivity.class);
+                intent.putExtra("id", String.valueOf(1));
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 }

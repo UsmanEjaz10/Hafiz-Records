@@ -17,19 +17,18 @@ public class StudentActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
-
+    DBHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student);
-        Progress f0 = new Progress(1, 23, 35, 20, 19, 2);
-        Progress f1 = new Progress(2, 50, 55, 15, 14, 9);
-        Progress f2 = new Progress(3, 102, 105, 2, 1, 1);
-        Progress f3 = new Progress(4, 23, 78, 21, 20, 6);
 
-        progressList.addAll(Arrays.asList(new Progress[]{f0,f1,f2,f3}));
+        db = new DBHelper(getApplicationContext());
+        progressList = db.selectAllProgress();
+
         recyclerView = findViewById(R.id.recylerViewprogress);
+
 
 
         recyclerView.setHasFixedSize(true);

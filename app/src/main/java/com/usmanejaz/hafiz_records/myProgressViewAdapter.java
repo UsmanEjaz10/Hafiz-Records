@@ -1,5 +1,6 @@
 package com.usmanejaz.hafiz_records;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,9 +42,10 @@ class myProgressViewAdapter extends RecyclerView.Adapter<myProgressViewAdapter.V
         holder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), EditActivity.class);
-                intent.putExtra("id", holder.Name.getText().toString());
-                v.getContext().startActivity(intent);
+                Context context = v.getContext();
+                Intent intent = new Intent(context, EditActivity.class);
+                intent.putExtra("id", String.valueOf(holder.data.id) );
+                context.startActivity(intent);
             }
         });
     }

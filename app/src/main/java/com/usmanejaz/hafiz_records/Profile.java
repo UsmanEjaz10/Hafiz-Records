@@ -2,7 +2,7 @@ package com.usmanejaz.hafiz_records;
 
 public class Profile {
 
-    public static int id = 0;
+    public int id = 0;
     public String name;
     public int age;
     public String section;
@@ -18,6 +18,12 @@ public class Profile {
         this.id = id + 1;
         this.name = name;
         this.age = age;
+        this.section = section;
+    }
+
+    public Profile( int id,String name, String section){
+        this.id = id;
+        this.name = name;
         this.section = section;
     }
 
