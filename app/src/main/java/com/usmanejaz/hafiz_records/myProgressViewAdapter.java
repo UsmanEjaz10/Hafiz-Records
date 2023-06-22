@@ -1,5 +1,6 @@
 package com.usmanejaz.hafiz_records;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +37,15 @@ class myProgressViewAdapter extends RecyclerView.Adapter<myProgressViewAdapter.V
         holder.endverse.setText(String.valueOf(holder.data.ending_sabaq) + ")");
         holder.sabqi_para.setText(String.valueOf(holder.data.sabqi));
         holder.manzil_para.setText(String.valueOf(holder.data.manzil));
+
+        holder.edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), EditActivity.class);
+                intent.putExtra("id", holder.Name.getText().toString());
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -51,6 +61,7 @@ class myProgressViewAdapter extends RecyclerView.Adapter<myProgressViewAdapter.V
         TextView endverse;
         TextView sabqi_para;
         TextView manzil_para;
+        AppCompatButton edit;
         Progress data;
         public VH(@NonNull View itemView) {
             super(itemView);
@@ -60,6 +71,8 @@ class myProgressViewAdapter extends RecyclerView.Adapter<myProgressViewAdapter.V
             endverse = itemView.findViewById(R.id.endverse);
             sabqi_para = itemView.findViewById(R.id.sabqi_para);
             manzil_para = itemView.findViewById(R.id.manzil_para);
+            edit = itemView.findViewById(R.id.edit);
+
 
         }
     }
