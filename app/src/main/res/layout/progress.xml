@@ -18,7 +18,7 @@
         app:cardElevation="10dp"
         android:padding="10dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:cardBackgroundColor="@color/purple_500">
+        app:cardBackgroundColor="@color/black">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -151,6 +151,7 @@
                 android:text="Edit"
                 android:textSize="24dp"
                 android:id="@+id/edit"
+                android:drawableEnd="@drawable/ic_baseline_edit_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.697"
                 app:layout_constraintStart_toEndOf="@+id/Name"

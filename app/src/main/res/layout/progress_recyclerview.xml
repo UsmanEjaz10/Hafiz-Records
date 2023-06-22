@@ -67,4 +67,19 @@
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/textViewDate"
         app:layout_constraintTop_toTopOf="@+id/textViewDate" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:id="@+id/delProfile"
+        android:layout_height="wrap_content"
+        android:background="#FF0000"
+        android:drawableEnd="@drawable/ic_baseline_delete_24"
+        android:text="Delete"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/divider3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewFriendName"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"></androidx.appcompat.widget.AppCompatButton>
 </androidx.constraintlayout.widget.ConstraintLayout>

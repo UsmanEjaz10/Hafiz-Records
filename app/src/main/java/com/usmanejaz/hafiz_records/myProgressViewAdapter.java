@@ -34,7 +34,7 @@ class myProgressViewAdapter extends RecyclerView.Adapter<myProgressViewAdapter.V
         holder.data=friendsList.get(position);
         holder.Name.setText("Student Id: " + holder.data.id);
         holder.sabaq_para.setText("Para: " + String.valueOf(holder.data.para_sabaq));
-        holder.startverse.setText("Verse(" + holder.data.starting_sabaq + "  -");
+        holder.startverse.setText("Page(" + holder.data.starting_sabaq + "  -");
         holder.endverse.setText(String.valueOf(holder.data.ending_sabaq) + ")");
         holder.sabqi_para.setText(String.valueOf(holder.data.sabqi));
         holder.manzil_para.setText(String.valueOf(holder.data.manzil));

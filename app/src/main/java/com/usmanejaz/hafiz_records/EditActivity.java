@@ -2,6 +2,7 @@ package com.usmanejaz.hafiz_records;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -48,6 +49,7 @@ public class EditActivity extends AppCompatActivity {
                db.editDetails(p);
                Intent intent = new Intent(EditActivity.this, StudentActivity.class);
                startActivity(intent);
+               ((Activity)v.getContext()).finish();
            }
        });
 

@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
-    Button button, editbutton;
+    Button button;
     FloatingActionButton f_button;
     DBHelper db;
 
@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         button = findViewById(R.id.button);
-        editbutton = findViewById(R.id.button2);
         f_button = findViewById(R.id.fbutton);
 
         db = new DBHelper(getApplicationContext());
@@ -59,14 +58,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        editbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, EditActivity.class);
-                intent.putExtra("id", String.valueOf(1));
-                startActivity(intent);
-            }
-        });
+
 
         f_button.setOnClickListener(new View.OnClickListener() {
             @Override
