@@ -34,6 +34,7 @@ public class StudentActivity extends AppCompatActivity {
 
         recyclerView.setHasFixedSize(true);
 
+
         //LinearLayoutManager GridLayoutManager
         layoutManager = new LinearLayoutManager(StudentActivity.this);
 //        layoutManager = new LinearLayoutManager(MainActivity.this,
@@ -41,7 +42,9 @@ public class StudentActivity extends AppCompatActivity {
 //                false);
         recyclerView.setLayoutManager(layoutManager);
 
+
         adapter = new myProgressViewAdapter(progressList) ;
+
         recyclerView.setAdapter(adapter);
         //adapter.notifyDataSetChanged();
 

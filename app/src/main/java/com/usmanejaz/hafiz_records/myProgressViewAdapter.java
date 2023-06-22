@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-class myProgressViewAdapter extends RecyclerView.Adapter<myProgressViewAdapter.MyVH> {
+class myProgressViewAdapter extends RecyclerView.Adapter<myProgressViewAdapter.VH> {
 
     List<Progress> friendsList;
     public myProgressViewAdapter(List<Progress> friendsList) {
@@ -19,22 +19,22 @@ class myProgressViewAdapter extends RecyclerView.Adapter<myProgressViewAdapter.M
 
     @NonNull
     @Override
-    public myProgressViewAdapter.MyVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public myProgressViewAdapter.VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.progress, parent, false);
-        return new MyVH(itemView);
+        return new VH(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull myProgressViewAdapter.MyVH holder, int position) {
+    public void onBindViewHolder(@NonNull myProgressViewAdapter.VH holder, int position) {
         holder.data=friendsList.get(position);
-        holder.Name.setText(holder.data.id);
-        holder.sabaq_para.setText(String.valueOf(holder.data.para_sabaq));
-        holder.startverse.setText(holder.data.starting_sabaq);
-        holder.endverse.setText(holder.data.ending_sabaq);
-        holder.sabqi_para.setText(holder.data.sabqi);
-        holder.manzil_para.setText(holder.data.manzil);
+        holder.Name.setText("Student Id: " + holder.data.id);
+        holder.sabaq_para.setText("Para: " + String.valueOf(holder.data.para_sabaq));
+        holder.startverse.setText("Verse(" + holder.data.starting_sabaq + "  -");
+        holder.endverse.setText(String.valueOf(holder.data.ending_sabaq) + ")");
+        holder.sabqi_para.setText(String.valueOf(holder.data.sabqi));
+        holder.manzil_para.setText(String.valueOf(holder.data.manzil));
     }
 
     @Override
@@ -43,7 +43,7 @@ class myProgressViewAdapter extends RecyclerView.Adapter<myProgressViewAdapter.M
     }
 
 
-    public class MyVH extends RecyclerView.ViewHolder {
+    public class VH extends RecyclerView.ViewHolder {
         TextView Name;
         TextView sabaq_para;
         TextView startverse;
@@ -51,7 +51,7 @@ class myProgressViewAdapter extends RecyclerView.Adapter<myProgressViewAdapter.M
         TextView sabqi_para;
         TextView manzil_para;
         Progress data;
-        public MyVH(@NonNull View itemView) {
+        public VH(@NonNull View itemView) {
             super(itemView);
             Name = itemView.findViewById(R.id.Name);
             sabaq_para = itemView.findViewById(R.id.sabaq_para);
