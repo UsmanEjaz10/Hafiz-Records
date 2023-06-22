@@ -45,6 +45,7 @@ class myProgressViewAdapter extends RecyclerView.Adapter<myProgressViewAdapter.V
                 Context context = v.getContext();
                 Intent intent = new Intent(context, EditActivity.class);
                 intent.putExtra("id", String.valueOf(holder.data.id) );
+
                 context.startActivity(intent);
             }
         });

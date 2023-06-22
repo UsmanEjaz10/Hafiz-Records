@@ -15,7 +15,7 @@ public class EditActivity extends AppCompatActivity {
     TextView editStudent;
     EditText sabaq_para, sabaq_start, sabaq_end, sabaqi, manzil;
     Button save;
-    Progress p;
+    Progress d;
     DBHelper db;
 
     @Override
@@ -23,7 +23,9 @@ public class EditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
 
-       Intent intent = getIntent();
+        db = new DBHelper(EditActivity.this);
+
+        Intent intent = getIntent();
         String id = intent.getStringExtra("id");
         sabaq_para  = findViewById(R.id.sabaq_para);
         sabaq_start = findViewById(R.id.sabaq_start);
@@ -34,6 +36,14 @@ public class EditActivity extends AppCompatActivity {
         editStudent = findViewById(R.id.EditStudent);
        editStudent.setText("Student ID: " + id);
 
+       Progress p = db.getDetails(Integer.parseInt(id));
+
+       sabaq_para.setText(String.valueOf(p.para_sabaq));
+       sabaq_start.setText(String.valueOf(p.starting_sabaq));
+       sabaq_end.setText(String.valueOf(p.ending_sabaq));
+       sabaqi.setText(String.valueOf(p.sabqi));
+       manzil.setText(String.valueOf(p.manzil%p.para_sabaq));
+
        save.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
@@ -43,10 +53,9 @@ public class EditActivity extends AppCompatActivity {
                int s_end = Integer.parseInt(sabaq_end.getText().toString());
                int sabqi = Integer.parseInt(sabaqi.getText().toString());
                int mnzil = Integer.parseInt(manzil.getText().toString());
-               p = new Progress(ide, s_start, s_end, sabaq, sabqi, mnzil);
-               db = new DBHelper(EditActivity.this);
+               d = new Progress(ide, s_start, s_end, sabaq, sabqi, mnzil);
 
-               db.editDetails(p);
+               db.editDetails(d);
                Intent intent = new Intent(EditActivity.this, StudentActivity.class);
                startActivity(intent);
                ((Activity)v.getContext()).finish();
