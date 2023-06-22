@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
-
+    Button stud
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         adapter = new myRecyclerViewAdapter(friendsList) ;
         recyclerView.setAdapter(adapter);
         //adapter.notifyDataSetChanged();
+
 
 
     }

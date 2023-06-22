@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/friendDetailLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageViewFriendPicture"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="Name"
+        android:textColor="@color/purple_700"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/imageViewFriendPicture"
+        app:layout_constraintTop_toTopOf="@+id/imageViewFriendPicture" />
+
+    <TextView
+        android:id="@+id/startverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:text="start"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/imageViewFriendPicture"
+        app:layout_constraintTop_toBottomOf="@+id/Name" />
+
+
+    <TextView
+        android:id="@+id/endverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="end"
+        android:textColor="@android:color/holo_green_dark"
+        android:textColorHint="@android:color/holo_green_dark"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/startverse"
+        app:layout_constraintTop_toTopOf="@+id/startverse" />
+
+    <TextView
+        android:id="@+id/sabaq_para"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="para"
+        android:textColor="@color/design_default_color_error"
+        android:textColorHint="@android:color/holo_green_dark"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/endverse"
+        app:layout_constraintTop_toTopOf="@+id/startverse" />
+
+
+
+    <TextView
+        android:id="@+id/Sabqi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:text="Sabqi"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/imageViewFriendPicture"
+        app:layout_constraintTop_toBottomOf="@+id/startverse" />
+
+
+    <TextView
+        android:id="@+id/sabqi_para"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="para"
+        android:layout_marginBottom="10dp"
+        android:textColor="@android:color/holo_green_dark"
+        android:textColorHint="@android:color/holo_green_dark"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/Sabqi"
+        app:layout_constraintTop_toTopOf="@+id/Sabqi" />
+
+    <TextView
+        android:id="@+id/Manzil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:text="Manzil"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/imageViewFriendPicture"
+        app:layout_constraintTop_toBottomOf="@+id/Sabqi" />
+
+
+    <TextView
+        android:id="@+id/manzil_para"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="para"
+        android:layout_marginBottom="10dp"
+        android:textColor="@android:color/holo_green_dark"
+        android:textColorHint="@android:color/holo_green_dark"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/Manzil"
+        app:layout_constraintTop_toTopOf="@+id/Manzil" />
+
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="395dp"
+        android:layout_height="3dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/holo_red_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Manzil" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
