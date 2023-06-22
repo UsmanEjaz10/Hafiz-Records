@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -44,8 +45,8 @@ class myProgressViewAdapter extends RecyclerView.Adapter<myProgressViewAdapter.V
 
 
     public class VH extends RecyclerView.ViewHolder {
-        TextView Name;
-        TextView sabaq_para;
+        AppCompatButton Name;
+        AppCompatButton sabaq_para;
         TextView startverse;
         TextView endverse;
         TextView sabqi_para;
